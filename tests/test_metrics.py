@@ -2,7 +2,7 @@ from langgraph_agent_lab.metrics import metric_from_state, summarize_metrics
 from langgraph_agent_lab.state import make_event
 
 
-def test_metric_from_state_success():
+def test_metric_from_state_success() -> None:
     state = {
         "scenario_id": "S",
         "route": "simple",
@@ -15,7 +15,7 @@ def test_metric_from_state_success():
     assert metric.nodes_visited == 2
 
 
-def test_summarize_metrics():
+def test_summarize_metrics() -> None:
     m1 = metric_from_state({"scenario_id": "1", "route": "simple", "final_answer": "ok", "events": [], "errors": []}, "simple", False)
     m2 = metric_from_state({"scenario_id": "2", "route": "tool", "final_answer": None, "events": [], "errors": []}, "tool", False)
     report = summarize_metrics([m1, m2])

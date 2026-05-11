@@ -1,3 +1,4 @@
 scenarios_path: data/sample/scenarios.jsonl
-checkpointer: memory
+# checkpointer: memory
+checkpointer: sqlite   # thay vì "memory"
 report_path: reports/lab_report.md
